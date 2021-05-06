@@ -1,0 +1,39 @@
+<div id="section1" class="container-fluid">
+  <div class="row">
+    <div class="col-lg-12 col-sm-12 col-md-12">
+      <h1>Welcome to CityX!</h1>
+      <small>View our handpicked locations from all over India!</small>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-9">
+      <div class="row text-center">
+        <div class="col-12" *ngIf="sights.length === 0; else elseblock">No Sights</div>
+        <ng-template #elseblock>
+           <div *ngFor="let sight of sights; let i = index" class="col-lg-6 ">
+          <div class="thumbnail" style="width: 90%" appMousehover>
+            <img src="{{ sight.imgUrl }}" style="height: 25vh; width: 100%" />
+            <div class="caption">
+              <h4 class="mt-2">{{ sight.name | titlecase}}</h4>
+              <small> {{ sight.city | appendString:"Location:"}}</small><br>
+              <small> {{sight.price | currency:'INR' }} </small><br>
+               <small class="text-primary"> {{ sight.description | customLowercase:"Description:"}}</small><br>
+               <small class="px-3"> {{ sight.address | appendString:"Address:" | customLowercase:"--" }}</small>
+            </div>
+            <p class="py-3">
+              <a [routerLink]="['/sightView']" [state]="this.sight" class="btn btn-primary btn-sm">More Info</a>
+            </p>
+          </div>
+        </div>
+        </ng-template>
+       
+      </div>
+    </div>
+    <div class="col-3">
+        <app-add-sight (AddSight)="AddSight($event)"></app-add-sight>
+    </div>
+  </div>
+</div>

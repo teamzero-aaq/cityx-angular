@@ -1,0 +1,43 @@
+<div class="container py-5">
+  <h1>List of All Sights</h1>
+  <div class="row  py-5">
+    <div class="col-4 pb-5">
+      <div class="thumbnail" style="width: 90%" appMousehover>
+        <img src="{{ catalog[0].url }}" style="height: 25vh; width: 100%" />
+        <div class="caption px-5 py-3">
+          <h4 class="mt-2">{{ catalog[0].name | titlecase }}</h4>
+          <small class="mt-2"> {{ catalog[0].price | currency: "INR" }}</small>
+          <br>
+             <button (click)="addToCart(catalog[0].id)" class="btn btn-success mt-2">add to cart</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="col-4 pb-5">
+      <div class="thumbnail" style="width: 90%" appMousehover>
+        <img src="{{ catalog[1].url }}" style="height: 25vh; width: 100%" />
+        <div class="caption px-5 py-3">
+          <h4 class="mt-2">{{ catalog[1].name | titlecase }}</h4>
+          <small class="mt-2"> {{ catalog[1].price | currency: "INR" }}</small>
+          <br>
+             <button (click)="addToCart(catalog[1].id)" class="btn btn-success mt-2">add to cart</button>
+        </div>
+      </div>
+    </div>
+
+     <div class="col-4 pb-5">
+      <div class="thumbnail" style="width: 90%" appMousehover>
+        <img src="{{ catalog[2].url }}" style="height: 25vh; width: 100%" />
+        <div class="caption px-5 py-3">
+          <h4 class="mt-2">{{ catalog[2].name | titlecase }}</h4>
+          <small class="mt-2"> {{ catalog[2].price | currency: "INR" }}</small>
+          <br>
+             <button (click)="addToCart(catalog[2].id)" class="btn btn-success mt-2">add to cart</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <pre *ngIf="added">added item to cart</pre>
+</div>

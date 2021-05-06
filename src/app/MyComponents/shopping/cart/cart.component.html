@@ -1,0 +1,21 @@
+
+<div class="container py-5">
+  <h1>Cart</h1>
+  <div class="row  py-5">
+    <div class="col-4 pb-5">
+      <div class="thumbnail" style="width: 90%" appMousehover>
+        <img src="{{ cart[0].url }}" style="height: 25vh; width: 100%" />
+        <div class="caption px-5 py-3">
+          <h4 class="mt-2">{{ cart[0].name | titlecase }}</h4>
+          <small class="mt-2"> {{cart[0].price | currency: "INR" }}</small>
+          <br>
+          <small>quantity {{cart[0].count}}</small><br>
+              <button (click)="removeItem(cart[0].id)" class="btn btn-success"> remove item cart </button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>

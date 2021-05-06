@@ -1,0 +1,34 @@
+<h5>Add a Sight</h5>
+<form  #addSight="ngForm" (ngSubmit)="onSubmit(addSight)" ngNativeValidate>
+  <div class="mb-3">
+    <label for="sight-name" class="form-label">Sight Name</label>
+    <input type="text" class="form-control" id="sight-name" [(ngModel)]="name" name="sight-name" required #sight_name="ngModel">
+   <small class="text-danger" *ngIf="sight_name.invalid && sight_name.touched">Please Enter Sight Name</small>
+  </div>
+  <div class="mb-3">
+    <label for="image-url" class="form-label">Image Url</label>
+    <input type="text" class="form-control" id="image-url" [(ngModel)]="imgUrl" name="image-url" required #img_url="ngModel">
+     <small class="text-danger" *ngIf="img_url.invalid && img_url.touched">Please Enter Sight Image URL</small>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <input type="text" class="form-control" id="description" [(ngModel)]="description" name="description" required #des="ngModel">
+     <small class="text-danger" *ngIf="des.invalid && des.touched">Please Enter Sight Description</small>
+  </div>
+  <div class="mb-3">
+    <label for="address" class="form-label">Address</label>
+    <input type="text" class="form-control" id="address" [(ngModel)]="address" name="address" required #add="ngModel">
+     <small class="text-danger" *ngIf="add.invalid && add.touched">Please Enter Sight Address</small>
+  </div>
+  <div class="mb-3">
+    <label for="city" class="form-label">City</label>
+    <input type="text" class="form-control" id="city" [(ngModel)]="city" name="city" required #sight_city="ngModel">
+     <small class="text-danger" *ngIf="sight_city.invalid && sight_city.touched">Please Enter Sight City</small>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">Price</label>
+    <input type="text" class="form-control" id="price" [(ngModel)]="price" name="price" required #sight_price="ngModel">
+     <small class="text-danger" *ngIf="sight_price.invalid && sight_price.touched">Please Enter Sight Price</small>
+  </div>
+  <button type="submit" class="btn btn-primary btn-sm" [disabled]="!addSight.valid">Add Sight</button>
+</form>
